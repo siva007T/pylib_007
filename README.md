@@ -37,11 +37,12 @@ print(pl.missing(df))          # null counts per column (pandas Series)
 pl.visualize(df, "eda.png")    # bar chart + Circos plot -> saved to eda.png
 ```
 
-Bring your own data — any DataFrame with **two or more numeric columns** works:
+Bring your own data — any DataFrame with **two or more numeric columns** works.
+A ready-made example dataset ships in [`examples/data.csv`](examples/data.csv):
 
 ```python
 import pandas as pd
-df = pd.read_csv("data.csv")
+df = pd.read_csv("examples/data.csv")   # or your own CSV
 pl.visualize(df)               # returns a matplotlib Figure
 
 # or draw the panels individually onto your own axes:
