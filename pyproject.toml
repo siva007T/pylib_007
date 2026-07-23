@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pylib_007"
+version = "0.1.0"
+description = "Beautiful bar-chart and Circos correlation plots for pandas DataFrames."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "siva007T" }]
+keywords = ["eda", "visualization", "circos", "chord-diagram", "pandas", "matplotlib"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pandas>=1.5",
+    "matplotlib>=3.5",
+    "numpy>=1.21",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "build>=1.0", "twine>=5.0"]
+
+[project.urls]
+Homepage = "https://github.com/siva007T/pylib_007"
+Issues = "https://github.com/siva007T/pylib_007/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pylib_007"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
