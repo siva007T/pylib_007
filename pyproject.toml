@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pylib_007"
-version = "0.1.0"
-description = "Beautiful bar-chart and Circos correlation plots for pandas DataFrames."
+version = "0.1.1"
+description = "Clean bar-chart and Circos correlation plots for pandas DataFrames."
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
