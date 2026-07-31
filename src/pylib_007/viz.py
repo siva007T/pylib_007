@@ -9,9 +9,11 @@ import numpy as np
 from matplotlib.patches import PathPatch, Wedge
 from matplotlib.path import Path
 
-_CAT = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100",
-        "#e87ba4", "#008300", "#4a3aa7", "#e34948"]
-_POS, _NEG, _INK, _MUTED, _GRID = "#2a78d6", "#e34948", "#1a1a1a", "#5b5b5b", "#e6e6e6"
+# Muted, corporate palette — desaturated slate/teal/taupe tones (no rainbow, no red+green clash).
+_CAT = ["#33475b", "#4e6e8e", "#5b8a8f", "#8a7f6d",
+        "#a86b7f", "#6b7a99", "#9c8452", "#6d6a7c"]
+_POS, _NEG = "#3d6d9e", "#b0655a"            # muted blue (+) / muted terracotta (-)
+_INK, _MUTED, _GRID = "#2b2f36", "#6b7078", "#e6e6e6"
 _FONT = "DejaVu Sans"
 
 def _numeric(df):
