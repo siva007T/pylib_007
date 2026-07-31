@@ -102,15 +102,18 @@ def circos_plot(df, threshold=0.0, ax=None):
     ax.set_title("Correlation Circos", color=_INK, fontsize=14, weight="bold", fontfamily=_FONT)
     return ax
 
-def visualize(df, path=None):
+def visualize(df, path=None, title=None):
     """Draw the bar chart and Circos plot side by side; return the Figure.
+    ``title`` defaults to a summary of the data (rows x numeric columns).
     If ``path`` is given (e.g. ``"eda.png"``), also save it there."""
+    num = _numeric(df)
+    if title is None:
+        title = f"{len(df):,} rows  x  {num.shape[1]} numeric columns"
     fig, (left, right) = plt.subplots(1, 2, figsize=(14, 6.5))
     fig.patch.set_facecolor("white")
     bar_chart(df, ax=left)
     circos_plot(df, ax=right)
-    fig.suptitle("pylib_007 — data at a glance", color=_INK, fontsize=17,
-                 weight="bold", fontfamily=_FONT)
+    fig.suptitle(title, color=_INK, fontsize=17, weight="bold", fontfamily=_FONT)
     fig.tight_layout(rect=(0, 0, 1, 0.95))
     if path:
         fig.savefig(path, dpi=200, facecolor="white", bbox_inches="tight")
